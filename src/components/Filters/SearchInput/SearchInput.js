@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { IoIosSearch } from "react-icons/io";
+import { useAppContext } from "../../../context/AppContext";
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,12 +34,27 @@ const InputField = styled.input`
 `;
 
 function SearchInput() {
+  const [text, setText] = useState("");
+
+  const { setSearchTerm } = useAppContext();
+
+  //make search function
+  const handleOnChange = (e) => {
+    setText(e.target.value);
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <Wrapper>
       <SearchIcon>
         <IoIosSearch size={25} />
       </SearchIcon>
-      <InputField type="text" placeholder="Insira o nome do pais ..." />
+      <InputField
+        value={text}
+        onChange={(e) => handleOnChange(e)}
+        type="text"
+        placeholder="Insira o nome do pais..."
+      />
     </Wrapper>
   );
 }

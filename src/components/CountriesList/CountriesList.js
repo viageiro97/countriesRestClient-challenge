@@ -1,24 +1,35 @@
 import styled from "styled-components";
 import { useAppContext } from "../../context/AppContext";
+import { ignoreAccent } from "../../utils/functions";
 import Country from "./Country/Country";
+import DataExportSection from "./DataExportSection/DataExportSection";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div``;
+
+const Grid = styled.div`
   display: grid;
   gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 function CountriesList() {
-  let { countries, loading, error, filterRegion, setNumCountries } =
-    useAppContext();
+  let countriesNum = 0;
+  let { countries, loading, error, filterRegion, searchTerm } = useAppContext();
 
   if (filterRegion) {
     countries = countries.filter(
       (country) => country.region.toLowerCase() === filterRegion
     );
+  }
 
-    setNumCountries(countries.length);
-  } else {
-    countries && setNumCountries(countries.length);
+  if (searchTerm) {
+    let term = ignoreAccent(searchTerm.toLowerCase());
+    countries = countries.filter((country) =>
+      ignoreAccent(country.translations.pt.toLowerCase()).includes(term)
+    );
+  }
+
+  if (countries) {
+    countriesNum = countries.length;
   }
 
   if (loading) return <div>Loading...</div>;
@@ -27,9 +38,12 @@ function CountriesList() {
 
   return (
     <Wrapper>
-      {countries.map((country) => (
-        <Country key={country.name} country={country} />
-      ))}
+      <DataExportSection region={filterRegion} countriesNum={countriesNum} />
+      <Grid>
+        {countries.map((country) => (
+          <Country key={country.name} country={country} />
+        ))}
+      </Grid>
     </Wrapper>
   );
 }

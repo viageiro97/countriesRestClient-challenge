@@ -71,7 +71,7 @@ function Country({ country }) {
         <p>
           <b>Região:</b> {region}
         </p>
-        <a href="https://flagcdn.com/w320/mz.png">Ver Bandeira</a>
+        <a href={flag}>Ver Bandeira</a>
       </CountryBody>
     </Wrapper>
   );

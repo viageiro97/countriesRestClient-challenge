@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import useFetch from "../hooks/useFetch";
 
 const ApiUrl =
@@ -9,8 +9,8 @@ export const useAppContext = () => useContext(AppContext);
 
 function AppContextProvider({ children }) {
   const { data: countries, loading, error } = useFetch(ApiUrl);
-  const [filterRegion, setFilterRegion] = useState(null); // Para aplicacao de filtros de regiao!
-  const [numCountries, setNumCountries] = useState(0);
+  const [filterRegion, setFilterRegion] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <AppContext.Provider
@@ -19,9 +19,9 @@ function AppContextProvider({ children }) {
         loading,
         error,
         filterRegion,
+        searchTerm,
+        setSearchTerm,
         setFilterRegion,
-        numCountries,
-        setNumCountries,
       }}
     >
       {children}
