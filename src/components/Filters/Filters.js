@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AreaFilter from "./AreaFilter/AreaFilter";
+import RegionFilter from "./RegionFilter/RegionFilter";
 import SearchInput from "./SearchInput/SearchInput";
 
 const Wrapper = styled.div`
@@ -12,7 +12,7 @@ function Filters() {
   return (
     <Wrapper>
       <SearchInput />
-      <AreaFilter />
+      <RegionFilter />
     </Wrapper>
   );
 }

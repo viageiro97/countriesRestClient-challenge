@@ -8,9 +8,23 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 function CountriesList() {
-  const { countries, loading } = useAppContext();
+  let { countries, loading, error, filterRegion, setNumCountries } =
+    useAppContext();
+
+  if (filterRegion) {
+    countries = countries.filter(
+      (country) => country.region.toLowerCase() === filterRegion
+    );
+
+    setNumCountries(countries.length);
+  } else {
+    countries && setNumCountries(countries.length);
+  }
 
   if (loading) return <div>Loading...</div>;
+
+  if (error) return <div>Error</div>;
+
   return (
     <Wrapper>
       {countries.map((country) => (

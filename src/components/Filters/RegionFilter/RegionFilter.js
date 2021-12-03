@@ -40,36 +40,35 @@ const DropdownOption = styled.li`
   }
 `;
 
-function AreaFilter() {
+function RegionFilter() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { filterArea, a, setFilterArea } = useAppContext();
+  const { filterRegion, setFilterRegion } = useAppContext();
 
-  console.log(a, filterArea);
   return (
     <Wrapper onClick={() => setIsOpen(!isOpen)}>
-      <span>{filterArea ? filterArea : "Filtrar por região"}</span>
+      <span>{filterRegion ? filterRegion : "Filtrar por região"}</span>
       {isOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}
 
       {isOpen && (
         <DropdownOptions>
-          <DropdownOption onClick={() => setFilterArea(null)}>
+          <DropdownOption onClick={() => setFilterRegion(null)}>
             Todos
           </DropdownOption>
 
-          <DropdownOption onClick={() => setFilterArea("africa")}>
+          <DropdownOption onClick={() => setFilterRegion("africa")}>
             África
           </DropdownOption>
-          <DropdownOption onClick={() => setFilterArea("americas")}>
+          <DropdownOption onClick={() => setFilterRegion("americas")}>
             Americas
           </DropdownOption>
-          <DropdownOption onClick={() => setFilterArea("asia")}>
+          <DropdownOption onClick={() => setFilterRegion("asia")}>
             Ásia
           </DropdownOption>
-          <DropdownOption onClick={() => setFilterArea("europa")}>
+          <DropdownOption onClick={() => setFilterRegion("europe")}>
             Europa
           </DropdownOption>
-          <DropdownOption onClick={() => setFilterArea("oceania")}>
+          <DropdownOption onClick={() => setFilterRegion("oceania")}>
             Oceania
           </DropdownOption>
         </DropdownOptions>
@@ -78,4 +77,4 @@ function AreaFilter() {
   );
 }
 
-export default AreaFilter;
+export default RegionFilter;

@@ -3,6 +3,7 @@ import { SiMicrosoftexcel } from "react-icons/si";
 import { FaFileCsv } from "react-icons/fa";
 import styled from "styled-components";
 import { BsFileEarmarkCode } from "react-icons/bs";
+import { useAppContext } from "../../context/AppContext";
 
 const Wrapper = styled.div`
   margin-bottom: 20px;
@@ -41,11 +42,16 @@ const ExportBtn = styled.button`
   }
 `;
 function DataExportSection() {
+  const { filterRegion, numCountries } = useAppContext();
   return (
     <Wrapper>
-      <MainText>Listando todos os paises (258)</MainText>
+      <MainText>
+        Exibindo{" "}
+        {filterRegion ? `paises da(e) ${filterRegion}` : "todos os paises"} (
+        {numCountries} Paises)
+      </MainText>
       <ExportDataArea>
-        <Label>Exportar dados em formato: </Label>
+        <Label>Exportar dados dos paises em formato: </Label>
         <ExportBtnsContainer>
           <ExportBtn>
             <SiMicrosoftexcel /> .xls
