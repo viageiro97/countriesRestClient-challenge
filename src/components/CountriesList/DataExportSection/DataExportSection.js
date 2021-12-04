@@ -3,6 +3,7 @@ import { SiMicrosoftexcel } from "react-icons/si";
 import { FaFileCsv } from "react-icons/fa";
 import styled from "styled-components";
 import { BsFileEarmarkCode } from "react-icons/bs";
+import ExportToExcel from "../../ExportToExcel";
 
 const Wrapper = styled.div`
   margin-bottom: 20px;
@@ -21,25 +22,7 @@ const Label = styled.span`
 const ExportBtnsContainer = styled.div`
   display: flex;
 `;
-const ExportBtn = styled.button`
-  display: flex;
-  margin-right: 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  background: none;
-  border: 2px solid dodgerblue;
-  align-items: center;
-  padding: 5px 10px;
-  svg {
-    font-size: 1rem;
-    margin-right: 5px;
-  }
 
-  &:hover {
-    background: dodgerblue;
-    color: white;
-  }
-`;
 function DataExportSection({ region = "WE", countriesNum = 23 }) {
   return (
     <Wrapper>
@@ -50,15 +33,7 @@ function DataExportSection({ region = "WE", countriesNum = 23 }) {
       <ExportDataArea>
         <Label>Exportar dados dos paises em formato: </Label>
         <ExportBtnsContainer>
-          <ExportBtn>
-            <SiMicrosoftexcel /> .xls
-          </ExportBtn>
-          <ExportBtn>
-            <FaFileCsv /> .csv
-          </ExportBtn>
-          <ExportBtn>
-            <BsFileEarmarkCode /> .xml
-          </ExportBtn>
+          <ExportToExcel />
         </ExportBtnsContainer>
       </ExportDataArea>
     </Wrapper>

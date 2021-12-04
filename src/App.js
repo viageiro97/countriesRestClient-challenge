@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
-import Download from "./components/Excel";
+import Home from "./pages/Home";
 
 const Wrapper = styled.div`
   max-width: 1140px;
@@ -13,7 +13,7 @@ function App() {
     <Wrapper>
       <GlobalStyles />
       <Header />
-      <Download />
+      <Home />
     </Wrapper>
   );
 }
