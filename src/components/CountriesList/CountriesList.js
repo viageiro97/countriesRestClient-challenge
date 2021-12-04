@@ -24,12 +24,16 @@ function CountriesList() {
   if (searchTerm) {
     let term = ignoreAccent(searchTerm.toLowerCase());
     countries = countries.filter((country) =>
-      ignoreAccent(country.translations.pt.toLowerCase()).includes(term)
+      ignoreAccent(country.translations.por.common.toLowerCase()).includes(term)
     );
   }
 
   if (countries) {
     countriesNum = countries.length;
+    //order countries by alphabetical in Portuguese
+    countries = countries.sort((a, b) =>
+      a.translations.por.common.localeCompare(b.translations.por.common)
+    );
   }
 
   if (loading) return <div>Loading...</div>;
@@ -40,8 +44,8 @@ function CountriesList() {
     <Wrapper>
       <DataExportSection region={filterRegion} countriesNum={countriesNum} />
       <Grid>
-        {countries.map((country) => (
-          <Country key={country.name} country={country} />
+        {countries.map((country, index) => (
+          <Country key={index} country={country} />
         ))}
       </Grid>
     </Wrapper>

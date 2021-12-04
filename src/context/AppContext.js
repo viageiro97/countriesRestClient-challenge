@@ -1,14 +1,28 @@
 import React, { createContext, useContext, useState } from "react";
 import useFetch from "../hooks/useFetch";
 
-const ApiUrl =
-  "https://restcountries.com/v2/all?fields=name,capital,flag,translations,region,population";
+const apiBase = "https://restcountries.com/v3.1";
+
+const fields = [
+  "name",
+  "capital",
+  "region",
+  "subregion",
+  "population",
+  "area",
+  "flags",
+  "timezones",
+  "translations",
+].join(",");
+
+const allCountriesUrl = `${apiBase}/all?fields=${fields}`;
+
 const AppContext = createContext();
 
 export const useAppContext = () => useContext(AppContext);
 
 function AppContextProvider({ children }) {
-  const { data: countries, loading, error } = useFetch(ApiUrl);
+  const { data: countries, loading, error } = useFetch(allCountriesUrl);
   const [filterRegion, setFilterRegion] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
 

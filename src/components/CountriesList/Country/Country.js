@@ -49,14 +49,15 @@ const SeeMoreBtn = styled.button`
 const CountryBody = styled.div``;
 
 function Country({ country }) {
-  const { translations, flag, capital, region, population } = country;
+  const { translations, flags, capital, region, population } =
+    country;
 
   return (
     <Wrapper>
       <CountryHeader>
         <Left>
           <Name>
-            {translations.pt} <Flag src={flag} />
+            {translations.por.common} <Flag src={flags.svg} />
           </Name>
         </Left>
         <SeeMoreBtn>Ver mais</SeeMoreBtn>
@@ -71,7 +72,7 @@ function Country({ country }) {
         <p>
           <b>Região:</b> {region}
         </p>
-        <a href={flag}>Ver Bandeira</a>
+        <a href="/">Ver Bandeira</a>
       </CountryBody>
     </Wrapper>
   );

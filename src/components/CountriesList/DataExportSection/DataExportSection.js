@@ -1,9 +1,6 @@
 import React from "react";
-import { SiMicrosoftexcel } from "react-icons/si";
-import { FaFileCsv } from "react-icons/fa";
 import styled from "styled-components";
-import { BsFileEarmarkCode } from "react-icons/bs";
-import ExportToExcel from "../../ExportToExcel";
+import ExportToExcel from "../../ExportToExcel/ExportToExcel";
 
 const Wrapper = styled.div`
   margin-bottom: 20px;

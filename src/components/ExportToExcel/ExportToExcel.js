@@ -2,7 +2,8 @@ import React from "react";
 import ReactExport from "react-data-export";
 import styled from "styled-components";
 import { SiMicrosoftexcel } from "react-icons/si";
-import generateDataSet from "../utils/generateExcelDataSet";
+import generateDataSet from "../../utils/generateExcelDataSet";
+import { useAppContext } from "../../context/AppContext";
 
 const ExcelFile = ReactExport.ExcelFile;
 const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
@@ -28,7 +29,9 @@ const ExportBtn = styled.button`
 `;
 
 export default function ExportToExcel() {
-  const dataSet = generateDataSet();
+  const { countries } = useAppContext();
+  const dataSet = generateDataSet(countries);
+
   return (
     <div>
       <ExcelFile
