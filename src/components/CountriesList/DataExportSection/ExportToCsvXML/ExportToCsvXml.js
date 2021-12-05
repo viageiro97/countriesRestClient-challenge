@@ -5,10 +5,19 @@ import generateCsvXmlDataset from "../../../../utils/generateCsvDataset";
 import { ExportBtn } from "../../../../GlobalStyles";
 
 export default function ExportToCsvXml({ format, children }) {
-  const { countries } = useAppContext();
+  let { countries, filterRegion } = useAppContext();
+
+  if (filterRegion) {
+    countries = countries.filter(
+      (country) => country.region.toLowerCase() === filterRegion
+    );
+  }
+
   const { fields, data } = generateCsvXmlDataset(countries);
 
-  const fileName = "Paises";
+  const fileName = filterRegion
+    ? `Paises de ${filterRegion}`
+    : `Paises do Mundo`;
   const exportType = format;
 
   function onClick() {

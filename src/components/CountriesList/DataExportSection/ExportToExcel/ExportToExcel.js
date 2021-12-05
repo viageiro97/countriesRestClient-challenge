@@ -10,20 +10,54 @@ const ExcelFile = ReactExport.ExcelFile;
 const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
 
 export default function ExportToExcel() {
-  const { countries } = useAppContext();
-  const dataSet = generateExcelDataSet(countries);
+  const { countries, filterRegion } = useAppContext();
 
+  let mainDataSet;
+  let filteredDataSet;
+  let filteredCountries;
+
+  mainDataSet = generateExcelDataSet(countries);
+
+  /*Caso o filtro de regioes esta activo, exporta uma folha com apenas os 
+  paises da regiao selecionada, e outra com todos os paises*/
+  if (filterRegion) {
+    filteredCountries = countries.filter(
+      (country) => country.region.toLowerCase() === filterRegion
+    );
+    filteredDataSet = generateExcelDataSet(filteredCountries);
+
+    return (
+      <div>
+        <ExcelFile
+          filename="Lista de Paises"
+          element={
+            <ExportBtn>
+              <SiMicrosoftexcel /> .xlsx
+            </ExportBtn>
+          }
+        >
+          <ExcelSheet
+            dataSet={filteredDataSet}
+            name={`Paises de ${filterRegion}`}
+          />
+          <ExcelSheet dataSet={mainDataSet} name="Todos os países" />
+        </ExcelFile>
+      </div>
+    );
+  }
+
+  //Se nao tiver o filtro de regioes activo, exporta apenas a folha com todos os paises
   return (
     <div>
       <ExcelFile
-        filename="Paises"
+        filename="Lista de Paises"
         element={
           <ExportBtn>
             <SiMicrosoftexcel /> .xlsx
           </ExportBtn>
         }
       >
-        <ExcelSheet dataSet={dataSet} name="Lista de Paises" />
+        <ExcelSheet dataSet={mainDataSet} name="Todos os países" />
       </ExcelFile>
     </div>
   );
