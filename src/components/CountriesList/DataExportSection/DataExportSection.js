@@ -1,36 +1,34 @@
 import React from "react";
-import styled from "styled-components";
-import ExportToExcel from "../../ExportToExcel/ExportToExcel";
 
-const Wrapper = styled.div`
-  margin-bottom: 20px;
-`;
-const MainText = styled.h2`
-  margin-bottom: 15px;
-`;
-const ExportDataArea = styled.div`
-  display: flex;
-`;
-const Label = styled.span`
-  display: block;
-  margin-right: 5px;
-`;
+import ExportToExcel from "./ExportToExcel/ExportToExcel";
+import ExportToCsvXML from "./ExportToCsvXML/ExportToCsvXml";
 
-const ExportBtnsContainer = styled.div`
-  display: flex;
-`;
+import { FaFileCode, FaFileCsv } from "react-icons/fa";
+import {
+  Wrapper,
+  MainText,
+  Label,
+  ExportDataArea,
+  ExportBtnsContainer,
+} from "./Styles";
 
-function DataExportSection({ region = "WE", countriesNum = 23 }) {
+function DataExportSection({ region, countriesNum }) {
   return (
     <Wrapper>
       <MainText>
-        Exibindo {region ? `paises da(e) ${region}` : "todos os paises"} (
+        Exibindo {region ? `países da(e) ${region}` : "todos os países"} (
         {countriesNum} Paises)
       </MainText>
       <ExportDataArea>
-        <Label>Exportar dados dos paises em formato: </Label>
+        <Label>Exportar dados dos países em formato: </Label>
         <ExportBtnsContainer>
           <ExportToExcel />
+          <ExportToCsvXML format="csv">
+            <FaFileCsv /> .csv
+          </ExportToCsvXML>
+          <ExportToCsvXML format="xml">
+            <FaFileCode /> .xml
+          </ExportToCsvXML>
         </ExportBtnsContainer>
       </ExportDataArea>
     </Wrapper>

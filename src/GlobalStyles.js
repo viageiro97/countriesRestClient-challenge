@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -22,5 +22,30 @@ const GlobalStyles = createGlobalStyle`
         font-size: 1.2rem;
     }
     `;
+
+export const ExportBtn = styled.button`
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  margin-right: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: none;
+  border: 2px solid dodgerblue;
+  align-items: center;
+  padding: 5px 10px;
+  svg {
+    margin-right: 5px;
+  }
+
+  &:hover {
+    background: dodgerblue;
+    color: white;
+  }
+  &:focus {
+    outline: solid;
+  }
+`;
 
 export default GlobalStyles;

@@ -1,36 +1,17 @@
 import React from "react";
 import ReactExport from "react-data-export";
-import styled from "styled-components";
+import { useAppContext } from "../../../../context/AppContext";
+import generateExcelDataSet from "../../../../utils/generateExcelDataSet";
+
 import { SiMicrosoftexcel } from "react-icons/si";
-import generateDataSet from "../../utils/generateExcelDataSet";
-import { useAppContext } from "../../context/AppContext";
+import { ExportBtn } from "../../../../GlobalStyles";
 
 const ExcelFile = ReactExport.ExcelFile;
 const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
 
-const ExportBtn = styled.button`
-  display: flex;
-  margin-right: 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  background: none;
-  border: 2px solid dodgerblue;
-  align-items: center;
-  padding: 5px 10px;
-  svg {
-    font-size: 1rem;
-    margin-right: 5px;
-  }
-
-  &:hover {
-    background: dodgerblue;
-    color: white;
-  }
-`;
-
 export default function ExportToExcel() {
   const { countries } = useAppContext();
-  const dataSet = generateDataSet(countries);
+  const dataSet = generateExcelDataSet(countries);
 
   return (
     <div>
