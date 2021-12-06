@@ -1,16 +1,12 @@
-import styled from "styled-components";
+import React from "react";
 import { useAppContext } from "../../context/AppContext";
 import { ignoreAccent } from "../../utils/functions";
-import Country from "./Country/Country";
+
+import Country from "./Country/Country.jsx";
 import DataExportSection from "./DataExportSection/DataExportSection";
 
-const Wrapper = styled.div``;
+import { Wrapper, Grid } from "./CountriesListStyles";
 
-const Grid = styled.div`
-  display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-`;
 function CountriesList() {
   let countriesNum = 0;
   let { countries, loading, error, filterRegion, searchTerm } = useAppContext();

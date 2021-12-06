@@ -49,3 +49,22 @@ export const ExportBtn = styled.button`
 `;
 
 export default GlobalStyles;
+
+export const SubText = styled.span`
+  display: block;
+  font-size: 0.9rem;
+  color: #8193a7;
+`;
+
+export const Name = styled.h3`
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+`;
+export const Flag = styled.img`
+  display: inline;
+  margin-left: 10px;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+`;

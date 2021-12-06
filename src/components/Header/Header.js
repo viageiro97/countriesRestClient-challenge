@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import { BsFillMoonFill } from "react-icons/bs";
+import HeaderFirst from "../HeaderFirst";
+
+import { Name, SubText, Flag } from "../../GlobalStyles";
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,11 +14,6 @@ const Wrapper = styled.div`
 `;
 const Texts = styled.div``;
 const MainText = styled.h1``;
-const SubText = styled.span`
-  display: block;
-  font-size: 0.9rem;
-  color: #8193a7;
-`;
 
 const ThemeToggler = styled.button`
   cursor: pointer;
@@ -32,10 +30,11 @@ const ThemeToggler = styled.button`
 function Header() {
   return (
     <Wrapper>
-      <Texts>
+      {/*<Texts>
         <MainText>Entao para onde vamos?</MainText>
         <SubText>Visualizou 7 de 54 paises</SubText>
-      </Texts>
+      </Texts>*/}
+      <HeaderFirst />
       <ThemeToggler>
         <BsFillMoonFill />
         <span>Tema escuro</span>

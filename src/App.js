@@ -2,6 +2,8 @@ import Header from "./components/Header/Header";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import Home from "./pages/Home";
+import Details from "./pages/Details";
+import { Route, Routes } from "react-router";
 
 const Wrapper = styled.div`
   max-width: 1140px;
@@ -13,7 +15,10 @@ function App() {
     <Wrapper>
       <GlobalStyles />
       <Header />
-      <Home />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/details" exact element={<Details />} />
+      </Routes>
     </Wrapper>
   );
 }
