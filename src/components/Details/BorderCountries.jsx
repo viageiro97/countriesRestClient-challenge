@@ -49,8 +49,8 @@ function BorderCountries({ borders }) {
     <Wrapper>
       <b>Paises Vizinhos: </b>
       <Grid>
-        {data.map((country) => (
-          <Link to={`/${country.cca3.toLowerCase()}`}>
+        {data.map((country, index) => (
+          <Link key={index} to={`/${country.cca3.toLowerCase()}`}>
             {truncateText(country.translations.por.common, 15)}
           </Link>
         ))}

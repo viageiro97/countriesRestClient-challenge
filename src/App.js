@@ -1,4 +1,4 @@
-import Header from "./components/Header/Header";
+import Header from "./components/Header/Header.jsx";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import Home from "./pages/Home";

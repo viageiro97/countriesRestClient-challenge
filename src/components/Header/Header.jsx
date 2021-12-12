@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { BsFillMoonFill } from "react-icons/bs";
-
 import { SubText } from "../../GlobalStyles";
 import { useLocation } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
@@ -15,29 +13,7 @@ const Wrapper = styled.div`
   border-bottom: 1px solid #e6e6e6;
 `;
 const Texts = styled.div``;
-const MainText = styled.h1`
-  @media (max-width: 575.98px) {
-    font-size: 1.1rem;
-  }
-`;
-
-const ThemeToggler = styled.button`
-  cursor: pointer;
-  padding: 5px 10px;
-  background: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  span {
-    margin-left: 5px;
-  }
-  @media (max-width: 400.98px) {
-    span {
-      display: none;
-    }
-    font-size: 1rem;
-  }
-`;
+const MainText = styled.h1``;
 
 function Header() {
   const { pathname } = useLocation();
@@ -62,10 +38,6 @@ function Header() {
       ) : (
         <DetaiBox country={country[0]} />
       )}
-      <ThemeToggler>
-        <BsFillMoonFill />
-        <span>Tema escuro</span>
-      </ThemeToggler>
     </Wrapper>
   );
 }
