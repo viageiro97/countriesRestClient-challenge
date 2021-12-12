@@ -8,3 +8,11 @@ export function formatNumber(number) {
 export function ignoreAccent(str) {
   return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
+
+// Truncar texto
+export function truncateText(text, maxLength) {
+  if (text.length > maxLength) {
+    return text.substring(0, maxLength) + "...";
+  }
+  return text;
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { formatNumber } from "../../../utils/functions";
 
@@ -13,7 +14,7 @@ import {
 } from "./styles";
 
 function Country({ country }) {
-  const { translations, flags, capital, region, population } = country;
+  const { translations, flags, capital, region, population, cca3 } = country;
 
   return (
     <Wrapper>
@@ -23,7 +24,9 @@ function Country({ country }) {
             {translations.por.common} <Flag src={flags.svg} />
           </Name>
         </Left>
-        <SeeMoreBtn>Ver mais</SeeMoreBtn>
+        <SeeMoreBtn>
+          <Link to={`/${cca3.toLowerCase()}`}>Ver Mais</Link>
+        </SeeMoreBtn>
       </CountryHeader>
       <CountryBody>
         <p>

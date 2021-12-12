@@ -16,8 +16,8 @@ function App() {
       <GlobalStyles />
       <Header />
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route path="/details" exact element={<Details />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/:code" element={<Details />} />
       </Routes>
     </Wrapper>
   );

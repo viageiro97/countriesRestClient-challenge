@@ -13,6 +13,7 @@ const fields = [
   "flags",
   "timezones",
   "translations",
+  "cca3",
 ].join(",");
 
 const allCountriesUrl = `${apiBase}/all?fields=${fields}`;
