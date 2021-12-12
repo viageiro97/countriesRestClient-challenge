@@ -11,6 +11,14 @@ const Wrapper = styled.div`
   background: white;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   border-radius: 5px;
+  @media (max-width: 768px) {
+    width: 300px;
+  }
+
+  @media (max-width: 575.98px) {
+    width: auto;
+    margin-bottom: 15px;
+  }
 `;
 const SearchIcon = styled.div`
   color: white;

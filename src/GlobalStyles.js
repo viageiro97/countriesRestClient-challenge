@@ -54,6 +54,13 @@ export const SubText = styled.span`
   display: block;
   font-size: 0.9rem;
   color: #8193a7;
+  @media (max-width: 575.98px) {
+    font-size: 0.7rem;
+  }
+  @media (max-width: 450px) {
+    font-size: 0.7rem;
+    display: none;
+  }
 `;
 
 export const Name = styled.h3`

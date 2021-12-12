@@ -6,31 +6,6 @@ import { truncateText } from "../../utils/functions";
 
 const Wrapper = styled.div``;
 
-const BorderBtn = styled.button`
-  a {
-    color: inherit;
-    width: 100%;
-    text-decoration: none;
-  }
-  font-family: "Noto Sans", sans-serif;
-  text-align: center;
-  display: flex;
-  cursor: pointer;
-  background: none;
-  border: 2px solid dodgerblue;
-  align-items: center;
-  justify-content: center;
-  padding: 5px 10px;
-
-  &:hover {
-    background: dodgerblue;
-    color: white;
-  }
-  &:focus {
-    outline: solid;
-  }
-`;
-
 const Grid = styled.div`
   display: grid;
   margin-top: 5px;

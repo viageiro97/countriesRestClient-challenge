@@ -5,7 +5,7 @@ const Wrapper = styled.div``;
 const Grid = styled.div`
   display: grid;
   gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 `;
 
 export { Wrapper, Grid };

@@ -8,6 +8,11 @@ export const MainText = styled.h2`
 `;
 export const ExportDataArea = styled.div`
   display: flex;
+  // media md from bootstrap
+  @media (max-width: 630px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 export const Label = styled.span`
   display: block;
@@ -16,4 +21,7 @@ export const Label = styled.span`
 
 export const ExportBtnsContainer = styled.div`
   display: flex;
+  @media (max-width: 630px) {
+    margin-top: 10px;
+  }
 `;

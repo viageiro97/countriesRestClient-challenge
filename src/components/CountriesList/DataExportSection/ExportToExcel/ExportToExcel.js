@@ -9,14 +9,14 @@ import { ExportBtn } from "../../../../GlobalStyles";
 const ExcelFile = ReactExport.ExcelFile;
 const ExcelSheet = ReactExport.ExcelFile.ExcelSheet;
 
-export default function ExportToExcel() {
+export default function ExportToExcel({ countriesIn }) {
   const { countries, filterRegion } = useAppContext();
 
   let mainDataSet;
   let filteredDataSet;
   let filteredCountries;
 
-  mainDataSet = generateExcelDataSet(countries);
+  mainDataSet = generateExcelDataSet(countriesIn || countries);
 
   /*Caso o filtro de regioes esta activo, exporta uma folha com apenas os 
   paises da regiao selecionada, e outra com todos os paises*/

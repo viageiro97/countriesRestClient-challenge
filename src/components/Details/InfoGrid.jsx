@@ -9,6 +9,9 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-bottom: 20px;
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 function InfoGrid({ country }) {

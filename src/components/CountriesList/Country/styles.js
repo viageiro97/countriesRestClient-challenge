@@ -5,13 +5,19 @@ export const Wrapper = styled.div`
   border-radius: 3px;
   padding: 20px 10px;
   background: white;
-  max-width: 380px;
 `;
 
 export const CountryHeader = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 15px;
+`;
+
+export const CountryFooter = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
 `;
 
 export const Left = styled.div`
@@ -31,16 +37,20 @@ export const Flag = styled.img`
   height: 25px;
   object-fit: contain;
 `;
-export const SeeMoreBtn = styled.button`
-  cursor: pointer;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  padding: 10px 15px;
-  background: dodgerblue;
+export const SeeMoreBtn = styled.div`
+  a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 15px;
+    background: dodgerblue;
 
-  &:hover {
-    background: #0074d9;
+    &:hover {
+      background: #0074d9;
+    }
   }
 `;
 

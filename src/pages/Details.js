@@ -9,6 +9,16 @@ const Wrapper = styled.div`
   display: flex;
   padding: 85px 0;
   justify-content: space-between;
+  //bootstrap lg breakpoint
+  @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 450px) {
+    text-align: center;
+  }
 `;
 const FlagContainer = styled.div`
   margin-right: 60px;
@@ -16,6 +26,10 @@ const FlagContainer = styled.div`
   img {
     border-radius: 5px;
     width: 100%;
+  }
+
+  @media (max-width: 992px) {
+    margin-right: 0;
   }
 `;
 const DetailsContainer = styled.div`

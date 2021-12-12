@@ -9,20 +9,17 @@ import {
   Left,
   CountryBody,
   Name,
-  Flag,
   SeeMoreBtn,
 } from "./styles";
 
 function Country({ country }) {
-  const { translations, flags, capital, region, population, cca3 } = country;
+  const { translations, capital, region, population, cca3 } = country;
 
   return (
     <Wrapper>
       <CountryHeader>
         <Left>
-          <Name>
-            {translations.por.common} <Flag src={flags.svg} />
-          </Name>
+          <Name>{translations.por.common}</Name>
         </Left>
         <SeeMoreBtn>
           <Link to={`/${cca3.toLowerCase()}`}>Ver Mais</Link>

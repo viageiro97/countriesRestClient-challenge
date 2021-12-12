@@ -3,7 +3,7 @@ import { useAppContext } from "../../context/AppContext";
 import { ignoreAccent } from "../../utils/functions";
 
 import Country from "./Country/Country.jsx";
-import DataExportSection from "./DataExportSection/DataExportSection";
+import DataExportSection from "./DataExportSection/DataExportSection.jsx";
 
 import { Wrapper, Grid } from "./CountriesListStyles";
 
