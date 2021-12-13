@@ -13,7 +13,7 @@ import {
 } from "./styles";
 
 function Country({ country }) {
-  const { translations, capital, region, population, cca3 } = country;
+  const { translations, capital, region, population, cca3, flags } = country;
 
   return (
     <Wrapper>
@@ -35,7 +35,7 @@ function Country({ country }) {
         <p>
           <b>Região:</b> {region}
         </p>
-        <a href="/">Ver Bandeira</a>
+        <a href={flags.svg}>Ver Bandeira</a>
       </CountryBody>
     </Wrapper>
   );
