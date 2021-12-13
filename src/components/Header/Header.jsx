@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { SubText } from "../../GlobalStyles";
 import { useLocation } from "react-router-dom";
 import { useAppContext } from "../../context/AppContext";
-import DetaiBox from "./DetailBox/DetailBox";
+import DetaiBox from "./DetailBox/DetailBox.jsx";
 
 const Wrapper = styled.div`
   display: flex;

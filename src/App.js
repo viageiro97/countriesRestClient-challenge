@@ -1,8 +1,8 @@
 import Header from "./components/Header/Header.jsx";
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
-import Home from "./pages/Home";
-import Details from "./pages/Details";
+import Home from "./pages/Home.jsx";
+import Details from "./pages/Details.jsx";
 import { Route, Routes } from "react-router";
 
 const Wrapper = styled.div`

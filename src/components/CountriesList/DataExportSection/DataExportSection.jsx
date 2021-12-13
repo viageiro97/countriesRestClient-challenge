@@ -1,7 +1,7 @@
 import React from "react";
 
-import ExportToExcel from "./ExportToExcel/ExportToExcel";
-import ExportToCsvXML from "./ExportToCsvXML/ExportToCsvXml";
+import ExportToExcel from "./ExportToExcel/ExportToExcel.jsx";
+import ExportToCsvXML from "./ExportToCsvXML/ExportToCsvXml.jsx";
 
 import { FaFileCode, FaFileCsv } from "react-icons/fa";
 import {
